@@ -1,0 +1,2 @@
+*.javascript linguist-vendored=false
+*.java linguist-detectable=true
