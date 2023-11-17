@@ -24,7 +24,7 @@ public class Program {
 
         ProductService productService = new ProductService();
 
-        double sum = productService.filteredSum(list);
+        double sum = productService.filteredSum(list,product -> product.getPrice() < 100);
 
         System.out.println("Sum = R$ " + String.format("%.2f", sum));
 

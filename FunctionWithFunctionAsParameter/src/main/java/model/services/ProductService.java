@@ -3,13 +3,14 @@ package model.services;
 import entities.Product;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public class ProductService {
 
-    public double filteredSum(List<Product> list) {
+    public double filteredSum(List<Product> list, Predicate<Product> criteria) {
         double sum = 0.0;
         for(Product product : list) {
-            if (product.getName().charAt(0) == 'T'){
+            if (criteria.test(product)){
                 sum += product.getPrice();
             }
         }
